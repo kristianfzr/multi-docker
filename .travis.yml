@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker build -t kristian/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker run -e CI=true kristian/react-test npm test -- --coverage
 
 after_success:
