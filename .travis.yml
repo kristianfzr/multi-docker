@@ -14,7 +14,7 @@ after_success:
   - docker build -t kristian/multi-nginx ./nginx
   - docker build -t kristian/multi-server ./server
   - docker build -t kristian/multi-worker ./worker
-  - docker push kristian/multi-client ./client
-  - docker push kristian/multi-nginx ./nginx
-  - docker push kristian/multi-server ./server
-  - docker push kristian/multi-worker ./worker
+  - docker push kristian/multi-client
+  - docker push kristian/multi-nginx
+  - docker push kristian/multi-server
+  - docker push kristian/multi-worker
