@@ -4,17 +4,17 @@ services:
 
 before_install:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker build -t kristian/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t kkristian/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true kristian/react-test npm test -- --coverage
+  - docker run -e CI=true kkristian/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t kristian/multi-client ./client
-  - docker build -t kristian/multi-nginx ./nginx
-  - docker build -t kristian/multi-server ./server
-  - docker build -t kristian/multi-worker ./worker
-  - docker push kristian/multi-client
-  - docker push kristian/multi-nginx
-  - docker push kristian/multi-server
-  - docker push kristian/multi-worker
+  - docker build -t kkristian/multi-client ./client
+  - docker build -t kkristian/multi-nginx ./nginx
+  - docker build -t kkristian/multi-server ./server
+  - docker build -t kkristian/multi-worker ./worker
+  - docker push kkristian/multi-client
+  - docker push kkristian/multi-nginx
+  - docker push kkristian/multi-server
+  - docker push kkristian/multi-worker
