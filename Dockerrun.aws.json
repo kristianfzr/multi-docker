@@ -34,7 +34,7 @@
                 }
             ],
             "links": [
-                "cleint", "server"
+                "client", "server"
             ],
             "memory": 128
         }
