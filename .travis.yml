@@ -18,3 +18,15 @@ after_success:
   - docker push kkristian/multi-nginx
   - docker push kkristian/multi-server
   - docker push kkristian/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: multi-container
+  env: Multicontainer-env
+  bucket_name: elasticbeanstalk-us-east-1-139029094532
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
